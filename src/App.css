@@ -1,0 +1,38 @@
+body {
+    height: 100%;
+}
+
+.app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.block__btn {
+    display: flex;
+    gap: 5px;
+}
+
+.btn {
+    padding: 20px;
+    background-color: rgb(73, 76, 250);
+    color: #fff;
+    gap: 5px;
+    border: none;
+    border-radius: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.default__state {
+    font-size: 25px;
+    border: 1px #fff;
+    background-color: rgb(73, 76, 250);
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-right: 5px;
+    font-weight: bold;
+}
