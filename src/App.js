@@ -23,7 +23,6 @@ function App() {
     dispatch({type: "ADD_CASH", payload: cash})
   }
 
-  
   const getCash = (cash) => {
     dispatch({type: "GET_CASH", payload: cash})
   }
