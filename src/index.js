@@ -5,7 +5,6 @@ import App from './App';
 import { Provider } from 'react-redux';
 import {createStore} from 'redux' 
 
-
 // создаём action = это JS объект у которого обязатьльно должно быть свойство
 // type по которму определяется как менять состояние(state)
 // также можно передать любое кол-во данных 
@@ -30,6 +29,10 @@ const reducer = (state = defaultState, action) => {
   // поэтому создаётся конструкция swwitch/case которая 
   // отслеживает type проброшенго в action
   switch (action.type) {
+    // по дефолту эта конструкция должна возвращать state(состояние)
+    // т.е если приходит action с type который не обрабатывается
+    // то мы возвращаем перевоначальный state(состояние)
+
     // у нас есть 2 action добавить или снять cash
     // для каждого создаётся case
     case "ADD_CASH":

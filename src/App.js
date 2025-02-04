@@ -23,8 +23,18 @@ function App() {
     dispatch({type: "ADD_CASH", payload: cash})
   }
 
-  
   const getCash = (cash) => {
+    dispatch({type: "GET_CASH", payload: cash})
+  }
+
+  const addClient = (cash) => {
+    // поскольку мы будем менять состояние нам нужен dispatch
+    // dispatch это функция
+    // параметром она принимает action
+    dispatch({type: "ADD_CASH", payload: cash})
+  }
+
+  const getClient = (cash) => {
     dispatch({type: "GET_CASH", payload: cash})
   }
 
