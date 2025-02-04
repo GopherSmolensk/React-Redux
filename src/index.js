@@ -19,6 +19,7 @@ import {createStore} from 'redux'
 const defaultState = {
   // дефолтное состояние когда мы открыли приложение
   cash: 42,
+  
 }
 
 // создам редюсер = это обычная JS функция
@@ -29,11 +30,6 @@ const reducer = (state = defaultState, action) => {
   // поэтому создаётся конструкция swwitch/case которая 
   // отслеживает type проброшенго в action
   switch (action.type) {
-    // по дефолту эта конструкция должна возвращать state(состояние)
-    // т.е если приходит action с type который не обрабатывается
-    // то мы возвращаем перевоначальный state(состояние)
-
-
     // у нас есть 2 action добавить или снять cash
     // для каждого создаётся case
     case "ADD_CASH":
@@ -46,6 +42,9 @@ const reducer = (state = defaultState, action) => {
     case "GET_CASH":
       return {...state, cash: state.cash - action.payload}
 
+      // по дефолту эта конструкция должна возвращать state(состояние)
+    // т.е если приходит action с type который не обрабатывается
+    // то мы возвращаем перевоначальный state(состояние)
     default:
       return state
   }
