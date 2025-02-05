@@ -1,6 +1,9 @@
-import {createStore, combineReducers} from 'redux' 
+import {createStore, combineReducers, applyMiddleware} from 'redux' 
 import { cashReducer } from './cashReducer.js'
 import { customerReducer } from './customerReducer.js'
+import { composeWithDevTools } from '@redux-devtools/extension'
+import { thunk } from 'redux-thunk'
+
 
 
 // создаём корневой редьюсер
@@ -11,4 +14,4 @@ const rootReducer = combineReducers({
 })
 
 // создаём стор
-export const store = createStore(rootReducer)
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))

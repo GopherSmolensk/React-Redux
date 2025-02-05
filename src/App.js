@@ -2,6 +2,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import { addCustomerAction, removeCustomerAction } from './store/customerReducer';
+import { fetchCustomers } from './asyncActions/fetchCustomers';
 
 
 
@@ -48,8 +49,9 @@ function App() {
     <div className='block__btn'>
       <button className='btn' onClick={() => addCash(Number(prompt()))}>Пополнить счёт</button>  
       <button className='btn' onClick={() => getCash(Number(prompt()))}>Снять со счёта</button>
-      <button className='btn' onClick={() => addCustomer(prompt())}>Добавить клиента</button>  
-      <button className='btn' onClick={() => getCash(Number(prompt()))}>Удалить клиента</button>    
+      <button className='btn' onClick={() => addCustomer(prompt())}>Добавить клиента</button>
+       {/* при событии onClick мы диспатчим ассинхронную функцию(ассинхронный экшен) */}
+      <button className='btn' onClick={() => dispatch(fetchCustomers())}>Получить клиетов с сервера</button>    
     </div>    
     {customers.length > 0 ?
       <div>
